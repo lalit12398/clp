@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./main.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+    <title>CLP</title>
+  </head>
+  <body>
+    <header>
+      <div class="f-left">CLP</div>
+      <div class="f-right">
+        <a href="javascript:void(0)" onclick="onModalOpenHandler(this)" data-modal = "createTaskModal"
+          ><i class="fa fa-plus" aria-hidden="true"></i
+        ></a>
+      </div>
+    </header>
+    <div class="main">
+      <!-- Task Accordion Container -->
+      <div class="task-container" id="taskContainer">
+
+      </div>
+
+      <!-- Create Task Modal -->
+      <div id="createTaskModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3>Add Task</h3>
+          </div>
+          <form action="javascript:void(0)" id="taskForm">
+            <div class="modal-body">
+              <div class="form-container">
+                <div class="mb-15">
+                  <input
+                    type="text"
+                    name="title"
+                    id="title"
+                    placeholder="Title"
+                    required
+                  />
+                </div>
+                <div class="mb-15">
+                  <textarea
+                    placeholder="Description"
+                    name="description"
+                    id="description"
+                    cols="30"
+                    rows="10"
+                    required
+                  ></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <div class="button-container">
+                <button class="cpl-btn btn-primary" onclick="onModalSaveHandler(this)" data-modal="createTaskModal">Save</button>
+                <button
+                  class="cpl-btn btn-secondary"
+                  onclick="modalHandler(this, 'hide')"
+                  data-modal = "createTaskModal"
+                >
+                  Cancel
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="./main.js"></script>
+</html>
